@@ -1,1 +1,27 @@
+name: run app.py
 
+on:
+  schedule:
+    - cron: '0 12 * * *' # At 12:00 daily
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # install the python version needed
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: execute py script # run main.py
+        run: python app.py
+  
