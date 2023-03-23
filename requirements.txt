@@ -1,0 +1,17 @@
+dash==2.6.0
+dash_bootstrap_components
+dash_core_components
+dash_html_components
+matplotlib
+numpy
+pandas
+plotly
+pytz
+requests
+scikit_learn
+seaborn
+statsmodels
+xgboost
+dash_tools
+gunicorn
+
